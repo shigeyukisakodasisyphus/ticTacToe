@@ -11,8 +11,8 @@ const box7 = document.getElementById('box7');
 const box8 = document.getElementById('box8');
 const box9 = document.getElementById('box9');
 
-const homeArray = [];
-const awayArray = [];
+let homeArray = [];
+let awayArray = [];
 
 // 勝敗決定時のモーダル
 const winnerModal = () => {
@@ -21,6 +21,10 @@ const winnerModal = () => {
 };
 const loserModal = () => {
     document.getElementById('loserModal').classList.add('active');
+    document.getElementById('mask').classList.add('active');
+};
+const drawModal = () => {
+    document.getElementById('drawModal').classList.add('active');
     document.getElementById('mask').classList.add('active');
 };
 
@@ -54,11 +58,15 @@ const box = (boxNumber) => {
         order === 0 ? winnerModal() : loserModal();
       } else if (player.includes(3) && player.includes(5) && player.includes(7)) {
         order === 0 ? winnerModal() : loserModal();
-      }
+      } 
     };
     judge(homeArray);
     judge(awayArray);
     gameIndex += 1;
+    console.log(gameIndex);
+    if (gameIndex === 9) {
+      drawModal();
+    }
   },{once: true});
   
 }
@@ -76,9 +84,18 @@ document.getElementById('winnerModalClose').addEventListener('click', (e) => {
   e.preventDefault();
   document.getElementById('winnerModal').classList.remove('active');
   document.getElementById('mask').classList.remove('active');
+  window.location.href = 'https://shigeyukisakoda.com/ticTacToe/index.html';
 });
 document.getElementById('loserModalClose').addEventListener('click', (e) => {
   e.preventDefault();
   document.getElementById('loserModal').classList.remove('active');
   document.getElementById('mask').classList.remove('active');
+  window.location.href = 'https://shigeyukisakoda.com/ticTacToe/index.html';
 });
+document.getElementById('drawModalClose').addEventListener('click', (e) => {
+  e.preventDefault();
+  document.getElementById('drawModal').classList.remove('active');
+  document.getElementById('mask').classList.remove('active');
+  window.location.href = 'https://shigeyukisakoda.com/ticTacToe/index.html';
+});
+
