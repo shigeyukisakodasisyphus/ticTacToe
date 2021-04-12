@@ -1,3 +1,4 @@
+@charset "UTF-8";
 *, *::after, *::before {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -6,6 +7,108 @@
 a {
   text-decoration: none;
   color: #333;
+}
+
+body {
+  font-family: "Helvetica", "Arial", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic" "ヒラギノ丸ゴ ProN", "Hiragino Maru Gothic ProN", sans-serif;
+}
+
+.startingContainer {
+  width: 300px;
+  margin: 10px auto;
+  height: 220px;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%) scale(0.95);
+          transform: translate(-50%, -50%) scale(0.95);
+  background-color: #fff;
+  z-index: 2;
+  visibility: visible;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.startingContainer .orderButton {
+  width: 200px;
+  margin: 0 auto 10px;
+  padding: 5px;
+  font-size: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.startingContainer .starting {
+  text-align: center;
+  font-size: 50px;
+  margin-top: 10px;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: 1.5s;
+  transition: 1.5s;
+}
+
+.startingContainer .starting.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.startingContainer .gameStart {
+  width: 200px;
+  margin: 0 auto 10px;
+  padding: 5px;
+  font-size: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 10px;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: 1.5s;
+  transition: 1.5s;
+}
+
+.startingContainer .gameStart.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.startingContainer.negative {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.startingMask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  z-index: 1;
+  opacity: .7;
+  visibility: visible;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.startingMask.negative {
+  opacity: 0;
+  visibility: hidden;
 }
 
 .container {
@@ -32,6 +135,34 @@ a {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.box:hover {
+  background-color: #eee;
+}
+
+.nextButton {
+  margin-top: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.nextButton .home {
+  color: red;
+}
+
+.nextButton .home.hide {
+  display: none;
+}
+
+.nextButton .away.hide {
+  display: none;
 }
 
 .modalOpen,

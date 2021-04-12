@@ -10,6 +10,17 @@
   <script src="script.js" defer></script>
 </head>
 <body>
+  <!-- opening modal -->
+
+  <div class="startingContainer" id="startingContainer">
+    <button class="orderButton" id="orderButton">ボタン</button>
+    <div class="buttonLabel">このボタンを押して順番を決めてください。</div>
+    <div id="starting" class="starting"></div>
+    <button class="gameStart" id="gameStart">GAME START</button>
+  </div>
+  <div class="startingMask" id="startingMask"></div>
+
+  <!-- box -->
   <div class="container">
     <data value='1' class="box1 box" id='box1'></data>
     <data value='2' class="box2 box" id='box2'></data>
@@ -21,18 +32,23 @@
     <data value='8' class="box8 box" id='box8'></data>
     <data value='9' class="box9 box" id='box9'></data>
   </div>
+  <div class="nextButton" id="nextButton">
+    <button class="home" id="home">Next Please</button>
+    <button class="away" id="away">Next Please</button>
+  </div>
   <div class="modal" id="winnerModal">
     <p>YOU ARE WINNER!</p>
-    <a href="" class="modalClose" id="winnerModalClose">TRY AGAIN</a>
+    <a href="https://shigeyukisakoda.com/ticTacToe/index.html" class="modalClose" id="winnerModalClose">TRY AGAIN</a>
   </div>
   <div class="modal" id="loserModal">
     <p class="loser">YOU ARE LOSER!</p>
-    <a href="" class="modalClose" id="loserModalClose">TRY AGAIN</a>
+    <a href="https://shigeyukisakoda.com/ticTacToe/index.html" class="modalClose" id="loserModalClose">TRY AGAIN</a>
   </div>
   <div class="modal" id="drawModal">
     <p class="loser">DRAW!</p>
-    <a href="" class="modalClose" id="drawModalClose">TRY AGAIN</a>
+    <a href="https://shigeyukisakoda.com/ticTacToe/index.html" class="modalClose" id="drawModalClose">TRY AGAIN</a>
   </div>
+
   <div class="mask" id="mask"></div>
 
   
