@@ -9,6 +9,10 @@ a {
 body {
   font-family: 'Helvetica','Arial','Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3','メイリオ', Meiryo,'ＭＳ Ｐゴシック','MS PGothic''ヒラギノ丸ゴ ProN','Hiragino Maru Gothic ProN',sans-serif;
 }
+main {
+  font-family: 'Montserrat', sans-serif;
+  position: relative;
+}
 
 // ********** opening **********
 @mixin button {
@@ -39,10 +43,14 @@ body {
   .orderButton {
     @include button();
   }
+  .buttonLabel {
+    text-align: center;
+    margin-top: 15px;
+  }
   .starting {
     text-align: center;
-    font-size: 50px;
-    margin-top: 10px;
+    font-size: 43px;
+    margin-top: 20px;
     opacity: 0;
     visibility: hidden;
     transition: 1.5s;
@@ -66,6 +74,7 @@ body {
 .startingContainer.negative {
   opacity: 0;
   visibility: hidden;
+  top: 80%;
 }
 .startingMask {
   position: fixed;
@@ -83,12 +92,28 @@ body {
   opacity: 0;
   visibility: hidden;
 } 
+
+// ********** title **********
+
+.titleWrapper {
+  width: 65%;
+  margin: 0 auto;
+  margin-top: 20px;
+  text-align: center;
+  .title {
+    font-size: 45px;
+  }
+  .ver,
+  .developer {
+    margin-top: 15px;
+  }
+}
 // ********** box **********
 .container {
   display: flex;
   flex-wrap: wrap;
   width: 270px;
-  margin: 50px auto 0;
+  margin: 40px auto 0;
 }
 .box {
   width: 90px;
@@ -109,7 +134,12 @@ body {
   margin-top: 10px;
   display: flex;
   justify-content: center;
+  .away,
   .home {
+    width: 130px;
+    font-size: 20px;
+  }
+  .away {
     color: red;
   }
   .home.hide {
@@ -120,6 +150,7 @@ body {
   }
 }
 
+// ********** judge modal **********
 
 .modalOpen,
 .modalClose {
@@ -138,18 +169,18 @@ body {
 }
 .modal {
   position: fixed;
-  top: 50%;
+  top: -15%;
   left: 50%;
   transform: translate(-50%, -50%) scale(.95);
-  background-color: #fff;
+  background-color: rgb(255, 255, 255);
   padding: 20px;
   border-radius: 5px;
   min-width: 500px;
-  z-index: 2;
+  z-index: 3;
   // display: none;ではフワッと表示させれない。アニメーションが効かない。
   opacity: 0;
   visibility: hidden;//透明にしてるだけでは「存在」しているので「存在」も消す。
-  transition: .3s;
+  transition: 1s;
   // 中のコンテンツが増え、画面の高さがあまりない場合にスクロールさせる。
   max-height: 80vh;
   overflow: auto;
@@ -161,6 +192,7 @@ body {
   }
 }
 .modal.active {
+  top: 85%;
   transform: translate(-50%, -50%) scale(1);
   opacity: 1;
   visibility: visible;
@@ -191,4 +223,19 @@ body {
 .mask.active {
   opacity: .7;
   visibility: visible;
+}
+
+// ********** sns **********
+
+.tweet {
+  position: fixed;
+  left: 50%;
+  bottom: 10%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 40px;
+  z-index: 2;
+  &:hover {
+    cursor: pointer;
+  }
 }

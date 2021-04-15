@@ -7,14 +7,25 @@
   <title>Document</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
   <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css">
   <script src="script.js" defer></script>
 </head>
 <body>
+  <main>
+
+    <div class="titleWrapper">
+      <h1 class="title">Tic Toc Toe</h1>
+      <div class="ver">Version 2.1</div>
+      <div class="developer">Shigeyuki Sakoda</div>
+    </div>
+  
   <!-- opening modal -->
 
   <div class="startingContainer" id="startingContainer">
-    <button class="orderButton" id="orderButton">ボタン</button>
-    <div class="buttonLabel">このボタンを押して順番を決めてください。</div>
+    <button class="orderButton" id="orderButton">Heads or Tails</button>
+    <div class="buttonLabel">Please push button.</div>
     <div id="starting" class="starting"></div>
     <button class="gameStart" id="gameStart">GAME START</button>
   </div>
@@ -33,24 +44,31 @@
     <data value='9' class="box9 box" id='box9'></data>
   </div>
   <div class="nextButton" id="nextButton">
-    <button class="home" id="home">Next Please</button>
-    <button class="away" id="away">Next Please</button>
+    <button class="home" id="home">Next You</button>
+    <button class="away" id="away">Please Push</button>
   </div>
   <div class="modal" id="winnerModal">
     <p>YOU ARE WINNER!</p>
     <a href="https://shigeyukisakoda.com/ticTacToe/index.html" class="modalClose" id="winnerModalClose">TRY AGAIN</a>
+    <!-- <a href="/" class="modalClose" id="winnerModalClose">PLAY AGAIN</a> -->
   </div>
   <div class="modal" id="loserModal">
     <p class="loser">YOU ARE LOSER!</p>
     <a href="https://shigeyukisakoda.com/ticTacToe/index.html" class="modalClose" id="loserModalClose">TRY AGAIN</a>
+    <!-- <a href="/" class="modalClose" id="loserModalClose">PLAY AGAIN</a> -->
   </div>
   <div class="modal" id="drawModal">
     <p class="loser">DRAW!</p>
     <a href="https://shigeyukisakoda.com/ticTacToe/index.html" class="modalClose" id="drawModalClose">TRY AGAIN</a>
+    <!-- <a href="/" class="modalClose" id="drawModalClose">PLAY AGAIN</a> -->
   </div>
 
   <div class="mask" id="mask"></div>
 
+  <a class="tweet" href="https://twitter.com/shigeyu_ki">
+    <i class="fab fa-twitter fa-2x"></i>
+  </a>
+</main>
   
 </body>
 </html>

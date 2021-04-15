@@ -105,7 +105,7 @@ const starting = Math.floor(Math.random() * 10) + 1;
 let order = starting % 2 ;
 console.log(order);
 document.getElementById('orderButton').addEventListener('click', ()=> {
-  document.getElementById('starting').innerText = (order === 0) ? '先攻は貴方': '先攻は私';
+  document.getElementById('starting').innerText = (order === 0) ? 'Heads is You': 'You are tails';
   document.getElementById('starting').classList.add('active');
   document.getElementById('gameStart').classList.add('active');
 }, {once: true});
@@ -122,7 +122,7 @@ document.getElementById('gameStart').addEventListener('click', ()=> {
       gameArray.push(parseInt(box5.value))
       gameIndex += 1;
     }
-});
+},{once: true});
 const homeButton = document.getElementById('home');
 const awayButton = document.getElementById('away');
 awayButton.classList.add('hide');
@@ -146,17 +146,17 @@ const box = (boxNumber) => {
     judge(homeArray, 0);
     // gameIndex += 1;judge()に記述
     order += 1;
-    // console.log(homeArray);
-    // console.log(awayArray);
-    // console.log(gameArray);
-    // console.log(gameIndex);
-    // console.log(order);
+    console.log(homeArray);
+    console.log(awayArray);
+    console.log(gameArray);
+    console.log(gameIndex);
+    console.log(order);
 
     if (gameIndex === 9) {
       drawModal();
     }
   }
-  },{once: true});
+  });
   
 };
 // awayButtonを押すと動くaway側関数
@@ -168,11 +168,11 @@ awayButton.addEventListener('click', () => {
   // gameIndex += 1;judge()に記述
   order += 1;
 
-  // console.log(homeArray);
-  // console.log(awayArray);
-  // console.log(gameArray);
-  // console.log(gameIndex);
-  // console.log(order);
+  console.log(homeArray);
+  console.log(awayArray);
+  console.log(gameArray);
+  console.log(gameIndex);
+  console.log(order);
 
   awayButton.classList.add('hide');
   homeButton.classList.remove('hide');
@@ -204,14 +204,14 @@ const box = (boxNumber) => {
     // gameIndex += 1;judge()に記述
     order += 1;
 
-    // console.log(homeArray);
-    // console.log(awayArray);
-    // console.log(gameArray);
-    // console.log(gameIndex);
-    // console.log(order);
+    console.log(homeArray);
+    console.log(awayArray);
+    console.log(gameArray);
+    console.log(gameIndex);
+    console.log(order);
 
     }
-  },{once: true});
+  });
   
 };
 // awayButtonを押すと動くaway側関数
@@ -225,11 +225,11 @@ awayButton.addEventListener('click', () => {
   
   order += 1;
 
-  // console.log(homeArray);
-  // console.log(awayArray);
-  // console.log(gameArray);
-  // console.log(gameIndex);
-  // console.log(order);
+  console.log(homeArray);
+  console.log(awayArray);
+  console.log(gameArray);
+  console.log(gameIndex);
+  console.log(order);
 
   awayButton.classList.add('hide');
   homeButton.classList.remove('hide');
